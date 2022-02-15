@@ -1,7 +1,7 @@
 % This code extracts Barcode of length 11 bases from R1 (forward reads) and R2(reverse reads) 
 % which is between V1 and V2, then filtered through InfusionBarcode inventory, 
 % also above cutoff (10). 
-%% Infusion Barcode 
+%% Infusion Barcode
 [~, ~, raw] = xlsread('Infusion_Barcode_20K.xlsx','Sheet1');
 raw(cellfun(@(x) ~isempty(x) && isnumeric(x) && isnan(x),raw)) = {''};
 stringVectors = string(raw(:,1));
